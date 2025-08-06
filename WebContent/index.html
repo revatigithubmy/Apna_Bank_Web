@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login</title>
+
+</head>
+<style>
+	:root {
+  --primary: #00a6ff;
+  --secondary: #ff00aa;
+  --dark: #0f172a;
+  --light: #f1f5f9;
+  --radius: 0.85rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+  padding: 2rem;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Removed ::before and ::after background glow */
+
+form {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+              inset 0 -2px 5px rgba(255,255,255,0.05);
+  transform: translateZ(30px) rotateX(1deg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(0, 166, 255, 0.3);
+}
+
+input[type="submit"] {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-3px) translateZ(15px);
+  box-shadow: 0 12px 30px rgba(0, 166, 255, 0.6);
+  filter: brightness(110%);
+  animation: pulse 1s ease infinite alternate;
+}
+
+input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+input[type="submit"]:hover::before {
+  left: 100%;
+}
+
+.container:hover {
+  animation-play-state: paused;
+  transform: translateZ(10px) rotateY(5deg) rotateX(3deg);
+}
+
+.container:hover form {
+  transform: translateZ(40px) rotateX(3deg);
+  box-shadow: 0 30px 60px rgba(0, 166, 255, 0.5),
+              inset 0 -3px 10px rgba(255,255,255,0.1);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotateY(0deg) rotateX(0deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(3deg) rotateX(1deg);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: translateY(0px) rotateY(0deg) rotateX(0deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 15px 35px rgba(0, 166, 255, 0.7);
+  }
+}
+	
+	
+</style>
+<body>
+  <div class="container">
+    <form action="LoginAdmin" method="post">
+      <h1>Admin Login</h1>
+      <input type="email" name="email" placeholder="Enter your Email Id" required />
+      <input type="password" name="password" placeholder="Enter your Password" required />
+      <input type="submit" value="Login" />
+    </form>
+  </div>
+</body>
+</html>
