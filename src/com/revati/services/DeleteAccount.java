@@ -11,18 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revati.dbcon.ConnectDB;
 
-/**
- * Servlet implementation class DeleteAccount
- */
 public class DeleteAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public DeleteAccount() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
