@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revati.dbcon.ConnectDB;
 
-/**
- * Servlet implementation class LoginAdmin
- */
 public class LoginAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
