@@ -10,15 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revati.dbcon.ConnectDB;
 
-/**
- * Servlet implementation class AddAccount
- */
 public class AddAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public AddAccount() {
         super();
         // TODO Auto-generated constructor stub
